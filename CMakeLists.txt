@@ -21,5 +21,4 @@ add_executable(justclipboard
 
 target_link_libraries(justclipboard PRIVATE Qt5::Widgets)
 
-install(TARGETS justclipboard
-        RUNTIME DESTINATION bin)
+install(TARGETS justclipboard)

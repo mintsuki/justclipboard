@@ -4,9 +4,9 @@
 #include "justclipboard.h"
 
 int main(int argc, char *argv[]) {
-    qDebug() << "justclipboard started";
-
     QApplication a(argc, argv);
+
+    qDebug() << "justclipboard started";
 
     auto jc = new JustClipboard(a.clipboard());
 

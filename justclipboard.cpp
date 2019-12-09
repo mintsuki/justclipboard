@@ -11,11 +11,11 @@ JustClipboard::JustClipboard(QClipboard *clipboard, QObject *parent) : QObject(p
 
 void JustClipboard::dataChanged() {
     const QMimeData *newMimeData = clipboard->mimeData();
-    qDebug() << "dataChanged" << newMimeData->formats();
+    qDebug() << "justclipboard: data changed:" << newMimeData->formats();
 
     if (newMimeData->formats().empty()) {
         if (mimeData != nullptr && !mimeData->formats().empty()) {
-            qDebug() << "restoring clipboard";
+            qDebug() << "justclipboard: restoring clipboard:" << mimeData->formats();
             disconnect(clipboard, SIGNAL(dataChanged()), this, SLOT(dataChanged()));
             clipboard->setMimeData(mimeData);
             connect(clipboard, SIGNAL(dataChanged()), this, SLOT(dataChanged()));
