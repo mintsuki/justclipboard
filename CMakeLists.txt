@@ -1,5 +1,10 @@
 cmake_minimum_required(VERSION 3.5)
 
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE "Release")
+endif()
+message("Build type: ${CMAKE_BUILD_TYPE}")
+
 project(justclipboard LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -20,5 +25,7 @@ add_executable(justclipboard
 )
 
 target_link_libraries(justclipboard PRIVATE Qt5::Widgets)
+
+set_target_properties(justclipboard PROPERTIES LINK_FLAGS_RELEASE -s)
 
 install(TARGETS justclipboard)
