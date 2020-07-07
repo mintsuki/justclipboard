@@ -28,17 +28,17 @@ void JustClipboard::dataChanged() {
         mimeData = new QMimeData;
     mimeData->clear();
 
-    if (newMimeData->hasColor()) {
-        mimeData->setColorData(newMimeData->colorData());
-        return;
-    } else if (newMimeData->hasHtml()) {
-        mimeData->setHtml(newMimeData->html());
+    if (newMimeData->hasText()) {
+        mimeData->setText(newMimeData->text());
         return;
     } else if (newMimeData->hasImage()) {
         mimeData->setImageData(newMimeData->imageData());
         return;
-    } else if (newMimeData->hasText()) {
-        mimeData->setText(newMimeData->text());
+    } else if (newMimeData->hasColor()) {
+        mimeData->setColorData(newMimeData->colorData());
+        return;
+    } else if (newMimeData->hasHtml()) {
+        mimeData->setHtml(newMimeData->html());
         return;
     } else if (newMimeData->hasUrls()) {
         mimeData->setUrls(newMimeData->urls());

@@ -6,7 +6,7 @@
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
 
-    qDebug() << "justclipboard started";
+    qDebug() << "justclipboard: started";
 
     auto jc = new JustClipboard(a.clipboard());
 
