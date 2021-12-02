@@ -16,7 +16,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt5 COMPONENTS Widgets REQUIRED)
+find_package(Qt6 COMPONENTS Widgets REQUIRED)
 
 add_executable(justclipboard
   main.cpp
@@ -24,7 +24,7 @@ add_executable(justclipboard
   justclipboard.h
 )
 
-target_link_libraries(justclipboard PRIVATE Qt5::Widgets)
+target_link_libraries(justclipboard PRIVATE Qt6::Widgets)
 
 set_target_properties(justclipboard PROPERTIES LINK_FLAGS_RELEASE -s)
 
